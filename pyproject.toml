@@ -1,0 +1,44 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "uplevel"
+description = "Access the value of a variable in a higher stack frame"
+authors = [
+    { name="Michael Hohenstein", email="michael@hohenste.in" },
+]
+readme = "Readme.md"
+requires-python= ">=3.8"
+keywords = ["variable", "stack frame", "closure"]
+
+license = {text = "GPL3"}
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+]
+dynamic = ["version"]
+
+[project.optional-dependencies]
+dev = [
+    "black",
+    "isort",
+    "build",
+    "twine",
+]
+
+
+[tool.setuptools.dynamic]
+version = {attr = "uplevel.__version__"}
+
+[project.urls]
+"Repository" = "https://github.com/MitchiLaser/uplevel"
+
+[tool.black]
+line-length = 150
+
+[tool.isort]
+profile = "black"
+
