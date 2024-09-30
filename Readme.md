@@ -1,6 +1,6 @@
 # Uplevel
 
-Access the values of variables in the parent scope.
+Access the values of variables in the parent scope. This package provides two commands: `upvar` and `uplift`.
 
 ## Installation
 
@@ -10,7 +10,7 @@ pip install uplevel
 
 ## Usage
 
-Here is a short example of how to use `uplevel`:
+Here is a short example of how to use `upvar` command:
 
 ```python
 from uplevel import upvar
@@ -27,4 +27,23 @@ def fib(stop: int, step: int = 0):
     return fib(stop, step + 1)
 
 print(fib(20))
+```
+
+Here is another example for the `uplift` command:
+
+```python
+#!/usr/bin/env python3
+
+import re
+from uplevel import uplift
+
+
+def simplematch(regex, string):
+    results = re.match(regex, string)
+    uplift(1, 'match', results)
+    return results
+
+
+if simplematch(r"[abc]+", "abc123"):
+    print(f"Matched: {match.group(0)}")
 ```
