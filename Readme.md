@@ -32,8 +32,6 @@ print(fib(20))
 Here is another example for the `uplift` command:
 
 ```python
-#!/usr/bin/env python3
-
 import re
 from uplevel import uplift
 
