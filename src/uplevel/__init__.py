@@ -1,6 +1,7 @@
 __version__ = "0.0.3"
 
 import sys
+import typing
 
 
 def upvar(level: int, varname: str):
@@ -12,7 +13,7 @@ def upvar(level: int, varname: str):
         return ValueError(f"Variable {varname} not found in the scope.")
 
 
-def uplift(level: int, varname: str, value):
+def uplift(level: int, varname: str, value: typing.Any):
     try:
         sys._getframe(level).f_back.f_locals[varname] = value
     except ValueError:

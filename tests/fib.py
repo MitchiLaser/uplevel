@@ -15,4 +15,4 @@ def fib(stop: int, step: int = 0):
     return fib(stop, step + 1)
 
 
-print(fib(20))
+print(fib(20))  # prints the 20th Fibonacci number
