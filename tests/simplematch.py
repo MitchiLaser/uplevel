@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 
 import re
-from uplevel import uplift
+from uplevel import upset
 
 
 def simplematch(regex, string):
     results = re.match(regex, string)
-    uplift(1, 'match', results)
+    upset(1, 'match', results)
     return results
 
 
